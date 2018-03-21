@@ -13,7 +13,7 @@ module FormsLab
     end
 
     post '/pirates' do
-      params[:pirate].each{|p| Pirate.new(p[:name], p[:weight].to_i, p[:height].to_i)}
+      params[:pirate].each{|p| Pirate.new(p["name"], p["weight"], p["height"])}
 
       params[:pirate][:ships].each{|s| Ship.new(s[:name], s[:type], s[:booty])}
 
